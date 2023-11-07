@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.IllegalFormatCodePointException;
+
 public class AnalyseMood {
     String message;
     public AnalyseMood(String message){
@@ -31,5 +33,20 @@ public class AnalyseMood {
         else {
             return "HAPPY";
         }
+    }
+
+    public String containsNullGiveHappy() {
+        try {
+            if (message.contains("Happy")) {
+                return "HAPPY";
+
+            } else {
+                return "SAD";
+            }
+        }
+        catch(NullPointerException ex){
+            System.out.println(ex);
+        }
+        return "HAPPY";
     }
 }

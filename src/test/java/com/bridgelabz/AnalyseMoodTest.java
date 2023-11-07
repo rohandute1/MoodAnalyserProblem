@@ -27,4 +27,10 @@ public class AnalyseMoodTest {
         String res = analyseMood.containsHappyGiveSad();
         Assertions.assertEquals("SAD",res);
     }
+    @Test
+    public void enteredNullInputShouldReturnHappy(){
+        AnalyseMood analyseMood = new AnalyseMood(null);
+        String res = analyseMood.containsNullGiveHappy();
+        Assertions.assertEquals("HAPPY",res);
+    }
 }
