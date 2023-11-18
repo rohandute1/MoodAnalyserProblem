@@ -33,4 +33,15 @@ public class AnalyseMoodTest {
         String res = analyseMood.containsNullGiveHappy();
         Assertions.assertEquals("HAPPY",res);
     }
+    @Test
+    public void userEnteredNullOrEmptyMoodDisplayMoodAnalysisException() {
+        AnalyseMood analyseMood = new AnalyseMood(" ");
+        try {
+            String result = analyseMood.containsNullGiveMoodAnalysisException();
+            Assertions.assertEquals("HAPPY", result);
+        } catch (MoodAnalyserException ex) {
+            // Handle the exception if needed
+            System.out.println("MoodAnalyserException: " + ex.getMessage());
+        }
+    }
 }
